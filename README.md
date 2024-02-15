@@ -24,5 +24,5 @@
 
 > Откройте веб-браузер и укажите [`localhost:8080`](http://localhost:8080/). Вы должны увидеть игру `game-2048`:
 <br>
-<br>
+
 ![game-2048](/assets/images/game-2048-welcome-page.png)
