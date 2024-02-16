@@ -7,14 +7,8 @@ Vagrant.configure("2") do |config|
     end
 # hostname виртуальной машины
   config.vm.hostname = "game-01"
-# настройки сети
+# добавление интерфейса публичной сети с пробросом портов
   config.vm.network "public_network", guest: 80, host: 8080
-    #use_dhcp_assigned_default_route: true
-# установка пакетов
-  config.vm.provision "update", type: "shell", inline: "echo Update; sudo apt-get update"
-  config.vm.provision "upgrade", type: "shell", inline: "echo Upgrade; sudo apt-get -y upgrade"
-  config.vm.provision "shell", path: "nginx_install.sh"
-  config.vm.provision "shell", path: "add_nginx_configuration.sh"
+# запуск скрипта для автоматического развертывания игры
   config.vm.provision "shell", path: "provision.sh"
-  config.vm.provision "shell", path: "systemd_npm_start.sh"
 end
